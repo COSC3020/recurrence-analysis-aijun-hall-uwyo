@@ -112,3 +112,9 @@ $n^{log_3(3)} = 1 < n^5$
 Therefore
 
 $T(n) \in \Theta(n^5)$
+
+<hr>
+
+- Used help from my divide-and-conquer readme to show work and format
+
+"I certify that I have listed all sources used to complete this exercise, including the use of any Large Language Models. All of the work is my own, except where stated otherwise. I am aware that plagiarism carries severe penalties and that if plagiarism is suspected, charges may be filed against me without prior notice."
