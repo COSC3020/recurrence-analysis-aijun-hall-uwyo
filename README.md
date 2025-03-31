@@ -45,17 +45,30 @@ Solving:
 
 $T(n) = 3T(\frac{n}{3}) + n^5$
 
+
+
 $T(\frac{n}{3}) = 3T(\frac{\frac{n}{3}}{3}) + (\frac{n}{3})^5$
+
 $T(\frac{n}{3}) = 3T(\frac{n}{9}) + \frac{n^5}{243}$
 
+
+
 $T(n) = 3[3T(\frac{n}{9}) + \frac{n^5}{243}] + n^5$
+
 $T(n) = 6T(\frac{n}{9}) + \frac{n^5}{81} + n^5$
 
+
+
 $T(\frac{n}{9}) = 3T(\frac{\frac{n}{9}}{3}) + (\frac{n}{9})^5$
+
 $T(\frac{n}{9}) = 3T(\frac{n}{27}) + \frac{n^5}{59049}$
 
+
+
 $T(n) = 6[3T(\frac{n}{27}) + \frac{n^5}{59049}] + \frac{n^5}{81} + n^5$
+
 $T(n) = 9T(\frac{n}{27}) + \frac{2n^5}{19683} + \frac{n^5}{81} + n^5$
+
 $T(n) = 9T(\frac{n}{27}) + \frac{19928n^5}{19683}$
 
 <hr>
@@ -89,12 +102,13 @@ $$
 $3T\left(\frac{n}{3}\right) + n^5$
 
 $a = 3$
+
 $b = 3$
+
 $f(n) = n^5$
 
-$n^{log{3}{3}} = 1 < n^5$
+$n^{log_3(3)} = 1 < n^5$
 
 Therefore
 
-$T(n) \in \Omega(n^5)$
-
+$T(n) \in \Theta(n^5)$
