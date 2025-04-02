@@ -72,49 +72,49 @@ $T(n) = 9T(\frac{n}{27}) + \frac{2n^5}{19683} + \frac{n^5}{81} + n^5$
 $T(n) = 9T(\frac{n}{27}) + \frac{19928n^5}{19683}$
 
 <hr>
+General form of k expansions
 
-$$
-\text{1. If } n^{\log_b a} > f(n), \text{ then:}
-$$
 
-$$
-T(n) \in O\big(n^{\log_b a}\big)
-$$
+$T(n) = 3^k  T(\frac{n}{3^k}) + \sum_{i=0}^{k-1} 3^i  (\frac{n}{3^i})^5$
 
-$$
-\text{2. If } n^{\log_b a} < f(n), \text{ then:}
-$$
+$3^i (\frac{n}{3^i})^5 = \frac{3^i n^5}{3^{5i}} = \frac{n^5}{3^{4i}}$
 
-$$
-T(n) \in O\big(f(n)\big)
-$$
+$T(n) = 3^k T(\frac{n}{3^k}) + \sum_{i=0}^{k-1} (\frac{n^5}{3^{4i}})$
 
-$$
-\text{3. If } n^{\log_b a} = f(n), \text{ then:}
-$$
+Stop reccurence at:
 
-$$
-T(n) \in O\big(n^{\log_b a} \log n\big)
-$$
+$\frac{n}{3^k} = 1 \ \rightarrow \ 3^k = n \ \rightarrow \ k = log_3(n)$
+
+$T(n) = 3^k  T(\frac{n}{3^k}) + \sum_{i=0}^{k-1} (\frac{n^5}{3^{4i}})$
+
+Because $3^k = n$ and $T(1) = \Theta(1)$:
+
+$T(n) = n  \Theta(1) + \sum_{i=0}^{log_3(n) - 1} (\frac{n^5}{3^{4i}})$
+
+$\sum_{i=0}^{log_3(n) - 1} (\frac{n^5}{3^{4i}}) = n^5  \sum_{i=0}^{log_3(n) - 1} (\frac{1}{81})^i$
 
 <hr>
 
-$3T\left(\frac{n}{3}\right) + n^5$
+Geometric Series of:
 
-$a = 3$
+$\sum_{i=0}^{k-1} r^i = \frac{(1 - r^k)}{(1 - r)}$
 
-$b = 3$
+$r = \frac{1}{81}$,
+$k = log_3(n)$
 
-$f(n) = n^5$
+$T(n) = \Theta(n) + n^5 (1 - (\frac{1}{81})^{log_3(n)}) \div (1 - \frac{1}{81})$
 
-$n^{log_3(3)} = 1 < n^5$
+$T(n) = \Theta(n) + n^5 (1 - \frac{1}{n^4}) \div (\frac{80}{81})$
 
-Therefore
+$T(n) = \Theta(n) + \Theta(n^5) (1 - \frac{1}{n^4})$
+
+$\Theta(n^5)$ grows larger and faster than all other elements, therefore
 
 $T(n) \in \Theta(n^5)$
 
 <hr>
 
 - Used help from my divide-and-conquer readme to show work and format
+- Used [symbolab](https://www.symbolab.com/) to help work through simplifying expressions 
 
 "I certify that I have listed all sources used to complete this exercise, including the use of any Large Language Models. All of the work is my own, except where stated otherwise. I am aware that plagiarism carries severe penalties and that if plagiarism is suspected, charges may be filed against me without prior notice."
